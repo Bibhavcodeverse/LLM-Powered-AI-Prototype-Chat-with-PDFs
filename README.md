@@ -66,7 +66,7 @@ graph TD
 - **LLM Orchestration**: LangChain provides the glue for memory, retrieval, and generation.
 - **Cost Control**: Local embeddings + Google AI Studio Free Tier ensures $0 operational cost for development.
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 ├── app.py              # Streamlit Web Interface & Chat Logic
