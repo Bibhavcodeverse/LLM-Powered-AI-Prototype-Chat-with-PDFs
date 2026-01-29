@@ -2,6 +2,9 @@
 
 A production-grade AI prototype that enables users to have interactive conversations with multiple PDF documents simultaneously. This system leverages **Retrieval-Augmented Generation (RAG)** to provide grounded, accurate answers while strictly minimizing hallucinations.
 
+## 📱 App Showcase
+![App Screenshot](app_screenshot.png)
+
 ---
 
 ##  Features (TASK 1: LLM-Powered AI Prototype)
