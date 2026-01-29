@@ -1,10 +1,10 @@
-# 🤖 AI Prototyping Engineer: Chat with PDFs
+#  AI Prototyping Engineer: Chat with PDFs
 
 A production-grade AI prototype that enables users to have interactive conversations with multiple PDF documents simultaneously. This system leverages **Retrieval-Augmented Generation (RAG)** to provide grounded, accurate answers while strictly minimizing hallucinations.
 
 ---
 
-## 🚀 Features (TASK 1: LLM-Powered AI Prototype)
+##  Features (TASK 1: LLM-Powered AI Prototype)
 
 - **Multi-Document Reasoning**: Upload multiple PDFs at once and ask questions across all of them.
 - **RAG Pipeline**:
@@ -14,7 +14,7 @@ A production-grade AI prototype that enables users to have interactive conversat
 - **Chunking Strategy**: Uses `RecursiveCharacterTextSplitter` (1000 character chunks with 100 character overlap) to maintain semantic context.
 - **Modern UI**: Clean, interactive chat interface built with **Streamlit**.
 
-## 🛡️ Hallucination & Quality Control (TASK 2)
+##  Hallucination & Quality Control (TASK 2)
 
 To ensure high-quality and truthful responses, the following guardrails are implemented:
 
@@ -23,7 +23,7 @@ To ensure high-quality and truthful responses, the following guardrails are impl
     > *"If the answer is not in the context, say 'I do not have enough information to answer this based on the provided documents.' and do not try to make up an answer."*
 3.  **Source Transparency**: Every response includes an expandable section showing the exact snippets of text (and page numbers) used by the AI to verify the answer.
 
-## 🔄 Rapid Iteration & Memory (TASK 3)
+##  Rapid Iteration & Memory (TASK 3)
 
 ### Conversational Memory
 The prototype implements **Conversational Memory** using `ConversationBufferMemory`. This allows for natural follow-up questions like *"Can you explain that point further?"* without re-stating the context.
@@ -34,7 +34,7 @@ The prototype implements **Conversational Memory** using `ConversationBufferMemo
     - **Cons**: Large history consumes tokens. However, Gemini 1.5 Flash has a massive 1M+ token context window, making this less of an issue than with smaller models.
 - **Limitations**: In an enterprise production environment, we would use `ConversationSummaryBufferMemory` to condense old conversations and save on token costs.
 
-## 🏗️ System Architecture (TASK 4)
+##  System Architecture (TASK 4)
 
 ```mermaid
 graph TD
@@ -68,7 +68,7 @@ graph TD
 
 ---
 
-## 🛠️ Setup & Execution
+##  Setup & Execution
 
 ### 1. Prerequisites
 - Python 3.10+
