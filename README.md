@@ -119,4 +119,4 @@ streamlit run app.py
 ```
 
 ---
-*Created as part of the AI Prototyping Engineer Practical Assessment.*
+
