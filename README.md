@@ -71,10 +71,19 @@ graph TD
 ##  Setup & Execution
 
 ### 1. Prerequisites
-- Python 3.10+
-- Google AI Studio API Key ([Get it here](https://aistudio.google.com/))
+- **Python 3.10+**: The core programming environment.
+- **Google AI Studio API Key**: Required for the Gemini 1.5 Flash LLM. You can [get it for free here](https://aistudio.google.com/app/apikey).
+- **Internet Connection**: Needed for the initial model download and LLM inference.
 
-### 2. Installation
+### 2. Core Dependencies
+- **Streamlit**: Powers the interactive web-based chat interface.
+- **LangChain**: Orchestrates the RAG flow, memory, and model interactions.
+- **langchain-google-genai**: Specifically handles the integration with Google's Gemini models.
+- **sentence-transformers**: Generates the **L6-v2 embeddings** locally on your machine.
+- **FAISS**: A highly efficient library for local vector similarity search.
+- **PyPDF**: Used to reliably parse and extract text from PDF documents.
+
+### 3. Installation
 Clone the repo and set up a virtual environment:
 ```powershell
 python -m venv .venv
