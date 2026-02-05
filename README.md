@@ -11,7 +11,7 @@ A production-grade AI prototype that enables users to have interactive conversat
 
 - **Multi-Document Reasoning**: Upload multiple PDFs at once and ask questions across all of them.
 - **RAG Pipeline**:
-    - **LLM**: `Gemini 1.5 Flash` via Google AI Studio (Free tier).
+    - **LLM**: `Gemini Flash Latest` via Google AI Studio (Free tier).
     - **Embeddings**: `sentence-transformers/all-MiniLM-L6-v2` (Running locally for speed and privacy).
     - **Vector Database**: `FAISS` for high-performance semantic search.
 - **Chunking Strategy**: Uses `RecursiveCharacterTextSplitter` (1000 character chunks with 100 character overlap) to maintain semantic context.
@@ -21,7 +21,7 @@ A production-grade AI prototype that enables users to have interactive conversat
 
 To ensure high-quality and truthful responses, the following guardrails are implemented:
 
-1.  **Strict Similarity Threshold (0.5)**: The retriever only pulls document chunks with a cosine similarity score of at least **0.5**. If no relevant context is found, the system refrains from answering.
+1.  **Adaptive Similarity Search**: The retriever searches for the most relevant document chunks based on semantic similarity. It prioritizes the closest matches (`k=5`) to ensure the LLM receives the best available context, even if the phrasing differs significantly.
 2.  **Source-Grounded Prompt Engineering**: The LLM is forced to follow a strict system prompt:
     > *"If the answer is not in the context, say 'I do not have enough information to answer this based on the provided documents.' and do not try to make up an answer."*
 3.  **Source Transparency**: Every response includes an expandable section showing the exact snippets of text (and page numbers) used by the AI to verify the answer.
@@ -57,9 +57,8 @@ graph TD
     subgraph "Query Reasoning"
     Chain -->|Check History| Memory[Conversation Memory]
     Chain -->|Semantic Search| FAISS
-    FAISS -->|Filter > 0.5| Retriever[Retriever]
     Retriever -->|Context + Query| Prompt[Grounded Prompt]
-    Prompt -->|Inference| LLM[Gemini 1.5 Flash]
+    Prompt -->|Inference| LLM[Gemini Flash Latest]
     LLM -->|Answer + Sources| UI
     end
 ```
