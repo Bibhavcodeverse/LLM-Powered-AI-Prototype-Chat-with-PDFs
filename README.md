@@ -6,7 +6,7 @@ A production-grade AI prototype that enables users to have interactive conversat
 
 
 ##  App Showcase
-![App Screenshot](Screenshot 2026-02-06 015108.png)
+![App Screenshot](https://github.com/Bibhavcodeverse/LLM-Powered-AI-Prototype-Chat-with-PDFs/blob/main/Screenshot%202026-02-06%20015108.png)
 
 ---
 
