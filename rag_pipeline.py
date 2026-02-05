@@ -32,7 +32,7 @@ class RAGSystem:
 
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=1000,
-            chunk_overlap=100,
+            chunk_overlap=200,
             separators=["\n\n", "\n", " ", ""]
         )
         
@@ -49,12 +49,12 @@ class RAGSystem:
             return None
             
         retriever = self.vectorstore.as_retriever(
-            search_type="similarity_score_threshold",
-            search_kwargs={"score_threshold": 0.5, "k": 3}
+            search_type="similarity",
+            search_kwargs={"k": 5}
         )
         
         llm = ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
+            model="gemini-flash-latest",
             temperature=0.1,
             google_api_key=os.getenv("GOOGLE_API_KEY")
         )
