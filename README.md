@@ -6,7 +6,7 @@ A production-grade AI prototype that enables users to have interactive conversat
 
 
 ##  App Showcase
-![App Screenshot](app_screenshot.png)
+![App Screenshot](Screenshot 2026-02-06 015108.png)
 
 ---
 
